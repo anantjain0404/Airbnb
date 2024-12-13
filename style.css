@@ -1,0 +1,62 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2820
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 body \{\
+    margin: 0;\
+    font-family: Arial, sans-serif;\
+    background-color: #1a1a1a;\
+    color: #f2f2f2;\
+\}\
+\
+header \{\
+    text-align: center;\
+    background-color: #333;\
+    padding: 20px;\
+    border-bottom: 2px solid #444;\
+\}\
+\
+header h1 \{\
+    margin: 0;\
+    font-size: 2.5em;\
+    color: #fff;\
+\}\
+\
+header h2 \{\
+    margin: 5px 0;\
+    font-size: 1.2em;\
+    color: #ccc;\
+\}\
+\
+.container \{\
+    max-width: 900px;\
+    margin: 30px auto;\
+    padding: 20px;\
+    background-color: #292929;\
+    border-radius: 10px;\
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);\
+\}\
+\
+h2 \{\
+    color: #e6e600;\
+    border-bottom: 1px solid #444;\
+    padding-bottom: 5px;\
+\}\
+\
+pre \{\
+    background: #1a1a1a;\
+    color: #00ccff;\
+    padding: 10px;\
+    border-radius: 5px;\
+    overflow-x: auto;\
+\}\
+\
+footer \{\
+    text-align: center;\
+    margin: 30px 0;\
+    color: #777;\
+\}\
+}

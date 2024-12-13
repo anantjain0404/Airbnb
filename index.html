@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.2">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Airbnb Data Analytics Project&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="style.css"&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Comprehensive Analysis of Airbnb Listings in Paris&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;By: Your Name&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Date: December 2024&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Introduction&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>This report presents an in-depth analysis of Airbnb listings in Paris, focusing on pricing trends,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>neighborhood popularity, and host metrics. The aim is to uncover actionable insights that can guide stakeholders<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>in understanding and optimizing the Parisian Airbnb market.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Problem Statement&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>During the analysis, key challenges were identified, including missing data, skewed distributions, and unstructured<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>information. This project aims to clean and analyze the dataset to produce meaningful insights for both hosts and travelers.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Data Cleaning&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;pre&gt;</p>
+<p class="p1"># Dropping columns with excessive missing data</p>
+<p class="p1">columns_to_drop = ['host_response_time', 'host_response_rate', 'host_acceptance_rate']</p>
+<p class="p1">listing_cleaned = listing.drop(columns=columns_to_drop)</p>
+<p class="p2"><br></p>
+<p class="p1"># Imputing missing numerical values</p>
+<p class="p1">listing_cleaned['review_scores_rating'].fillna(listing_cleaned['review_scores_rating'].median(), inplace=True)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/pre&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Exploratory Data Analysis&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Price Distribution by Neighborhood&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;The analysis revealed significant differences in average prices across neighborhoods.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;pre&gt;</p>
+<p class="p1"># Calculating average price by neighborhood</p>
+<p class="p1">average_price = listing_cleaned.groupby('neighbourhood')['price'].mean().sort_values(ascending=False)</p>
+<p class="p1">print(average_price)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/pre&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="visualization"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;[Placeholder for Price Distribution Chart]&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Accommodation Size vs. Price&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Listings accommodating larger groups command higher prices.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;pre&gt;</p>
+<p class="p1"># Analyzing price by accommodation size</p>
+<p class="p1">price_by_accommodation = listing_cleaned.groupby('accommodates')['price'].mean()</p>
+<p class="p1">price_by_accommodation.plot(kind='bar', title='Accommodation Size vs. Price')</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/pre&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Conclusions&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Location and accommodation size are critical determinants of pricing.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Demand for larger accommodations presents lucrative opportunities.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Market dynamics significantly influence pricing and listing trends.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&amp;copy; 2024 Your Name. All rights reserved.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
